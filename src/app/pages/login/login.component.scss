@@ -1,0 +1,44 @@
+ion-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  background: #000;
+}
+div {
+  margin: auto;
+  background-color: #333; 
+  width: 400px;
+  padding: 40px;
+  border-radius: 4px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.9);
+  text-align: center;
+}
+
+ion-item {
+  --background: #444; // Color gris para los campos de entrada
+  --color: #ffffff;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+
+ion-label {
+  color: #ffffff;
+}
+
+ion-button {
+  --background: #ffcc00; // Color original del botón de inicio de sesión
+  width: 100%;
+  font-weight: bold;
+}
+
+ion-text a {
+  color: #ffcc00; // Color para el enlace
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+ion-text a:hover {
+  text-decoration: underline;
+}

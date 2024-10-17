@@ -1,0 +1,51 @@
+<ion-content>
+  <div class="form-container">
+    <h1 class="title">Registrar nuevo usuario</h1>
+    
+    <ion-item>
+      <ion-label position="floating">Usuario</ion-label>
+      <ion-input [(ngModel)]="usuario" required></ion-input>
+      <div *ngIf="registroFallido && !usuario" class="error-message">
+        Este campo es obligatorio.
+      </div>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Clave</ion-label>
+      <ion-input [(ngModel)]="clave" type="password" required></ion-input>
+      <div *ngIf="registroFallido && !clave" class="error-message">
+        Este campo es obligatorio.
+      </div>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Nombre</ion-label>
+      <ion-input [(ngModel)]="nombreCompleto" required></ion-input>
+      <div *ngIf="registroFallido && !nombreCompleto" class="error-message">
+        Este campo es obligatorio.
+      </div>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Rol</ion-label>
+      <ion-select [(ngModel)]="rol">
+        <ion-select-option value="docente">Docente</ion-select-option>
+        <ion-select-option value="alumno">Alumno</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-button (click)="registrar()">Registrar</ion-button>
+    <ion-button expand="full" routerLink="/login" color="light">
+      Volver al inicio de sesión
+    </ion-button>
+
+    <!-- Mensajes de éxito y de error en texto -->
+    <div *ngIf="successMessage" class="message success">
+      <h2>{{ successMessage }}</h2>
+    </div>
+
+    <div *ngIf="errorMessage" class="message error">
+      <h2>{{ errorMessage }}</h2>
+    </div>
+  </div>
+</ion-content>
